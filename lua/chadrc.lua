@@ -2,7 +2,7 @@
 local M = {}
 
 M.base46 = {
-  theme = "tokyodark",
+  theme = "github_dark",
   transparency = true,
   hl_override = {
     Comment = { italic = true },

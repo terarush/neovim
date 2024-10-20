@@ -10,7 +10,8 @@ local servers = {
   "glint",
   "pyright",
   "intelephense",
-  "lua_ls"
+  "lua_ls",
+  "rust_analyzer"
   -- Uncomment these if you want to use them
   -- "stimulus-language-server",
   -- "vue-language-server",
@@ -65,23 +66,6 @@ lspconfig.svelte.setup {
 lspconfig.astro.setup {
   cmd = { "astro-language-server", "--stdio" },
   filetypes = { "astro" },
-}
-
--- Rust Analyzer
-lspconfig.rust_analyzer.setup {
-  on_attach = on_attach,
-  on_init = on_init,
-  capabilities = capabilities,
-  settings = {
-    ["rust-analyzer"] = {
-      cargo = {
-        features = "all",
-      },
-      procMacro = {
-        enable = true,
-      },
-    },
-  },
 }
 
 -- TypeScript Language Server

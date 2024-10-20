@@ -53,12 +53,12 @@ return {
   --   },
   -- },
   -- indent-blankline config
-  {
-    "lukas-reineke/indent-blankline.nvim",
-    config = function()
-      require "plugins.configs.plugins.ident-blankline"
-    end,
-  },
+  -- {
+  --   "lukas-reineke/indent-blankline.nvim",
+  --   config = function()
+  --     require "plugins.configs.plugins.ident-blankline"
+  --   end,
+  -- },
   -- auto format
   {
     "stevearc/conform.nvim",
@@ -78,4 +78,7 @@ return {
       },
     },
   },
+  {
+    "Rustysrp/vim-gusher"
+  }
 }
