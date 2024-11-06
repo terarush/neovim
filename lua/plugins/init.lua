@@ -60,6 +60,20 @@ return {
   --   end,
   -- },
   -- auto format
+  -- tree sitter
+  {
+    "nvim-treesitter/nvim-treesitter",
+    event = "BufRead",
+    build = ":TSUpdate",
+    config = function()
+      require("nvim-treesitter.configs").setup {
+        highlight = {
+          enable = true,
+          additional_vim_regex_highlighting = false,
+        },
+      }
+    end,
+  },
   {
     "stevearc/conform.nvim",
     event = "BufWritePre",
@@ -69,16 +83,18 @@ return {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
-        "lua-language-server",
-        "stylua",
-        "html-lsp",
-        "css-lsp",
-        "prettier",
+        "html",
+        "cssls",
         "gopls",
+        "glint",
+        "pyright",
+        "intelephense",
+        "lua_ls",
+        "rust_analyzer",
       },
     },
   },
   {
-    "Rustysrp/vim-gusher"
-  }
+    "jwalton512/vim-blade",
+  },
 }

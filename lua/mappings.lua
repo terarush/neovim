@@ -18,4 +18,9 @@ map("n", "<Tab>", ":BufferLineCycleNext<CR>", { desc = "Next tab" })
 map("n", "<C-t>", function()
   require("nvchad.themes").open { style = "compact" }
 end, {})
+-- risize width vsp or sp 
+map("n", "<C-w>h", ":vertical resize -10<CR>", { desc = "Resize window left", silent = true })
+map("n", "<C-w>l", ":vertical resize +10<CR>", { desc = "Resize window right", silent = true })
+map("n", "<C-w>k", ":resize +10<CR>", { desc = "Resize window up", silent = true })
+map("n", "<C-w>j", ":resize -10<CR>", { desc = "Resize window down", silent = true })
 -- map("n", "<Space>e", ":Explore .<CR>", { noremap = true, silent = true, desc = "Toggle Nvim Tree" })

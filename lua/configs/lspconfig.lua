@@ -11,7 +11,7 @@ local servers = {
   "pyright",
   "intelephense",
   "lua_ls",
-  "rust_analyzer"
+  "rust_analyzer",
   -- Uncomment these if you want to use them
   -- "stimulus-language-server",
   -- "vue-language-server",
@@ -44,6 +44,18 @@ lspconfig.prismals.setup {
   },
 }
 
+lspconfig.emmet_ls.setup{
+  cmd = { "emmet-ls", "--stdio" },
+  filetypes = { "blade", "blade.php", "html", "css" },
+  init_options = {
+    html = {
+      options = {
+        ["output.selfClosingStyle"] = "xhtml"
+      }
+    }
+  },
+}
+
 -- Svelte Language Server
 lspconfig.svelte.setup {
   cmd = { "svelteserver", "--stdio" },
@@ -60,12 +72,6 @@ lspconfig.svelte.setup {
       },
     },
   },
-}
-
--- Astro Language Server
-lspconfig.astro.setup {
-  cmd = { "astro-language-server", "--stdio" },
-  filetypes = { "astro" },
 }
 
 -- TypeScript Language Server

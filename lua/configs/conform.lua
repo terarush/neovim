@@ -13,6 +13,7 @@ local options = {
     golang = { "goimports" },
     cpp = { "clang-format" },
     rust = { "rustfmt" },
+    svelte = { "asp-grep" },
   },
 
   format_on_save = {
