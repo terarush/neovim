@@ -12,10 +12,10 @@ local servers = {
   "intelephense",
   "lua_ls",
   "rust_analyzer",
+  "clangd",
   -- Uncomment these if you want to use them
   -- "stimulus-language-server",
   -- "vue-language-server",
-  -- "svelte-language-server",
 }
 
 -- Setup LSP servers with default config
@@ -56,18 +56,41 @@ lspconfig.emmet_ls.setup{
   },
 }
 
--- Svelte Language Server
+-- -- Svelte Language Server
+-- lspconfig.svelte.setup {
+--   cmd = { "svelteserver", "--stdio" },
+--   filetypes = { "svelte" },
+--   settings = {
+--     svelte = {
+--       plugin = {
+--         svelte = {
+--           compilerWarnings = {
+--             ["a11y-missing-attribute"] = "ignore",
+--             ["a11y-unknown-aria-attribute"] = "ignore",
+--           },
+--         },
+--       },
+--     },
+--   },
+-- }
+
 lspconfig.svelte.setup {
   cmd = { "svelteserver", "--stdio" },
   filetypes = { "svelte" },
   settings = {
     svelte = {
       plugin = {
-        svelte = {
-          compilerWarnings = {
-            ["a11y-missing-attribute"] = "ignore",
-            ["a11y-unknown-aria-attribute"] = "ignore",
-          },
+        css = {
+          enable = true,
+        },
+        html = {
+          enable = true,
+        },
+        typescript = {
+          enable = true,
+        },
+        javascript = {
+          enable = true,
         },
       },
     },

@@ -14,6 +14,7 @@ local options = {
     cpp = { "clang-format" },
     rust = { "rustfmt" },
     svelte = { "asp-grep" },
+    c = { "clang-format" },
   },
 
   format_on_save = {

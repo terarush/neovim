@@ -80,6 +80,9 @@ return {
     opts = require "configs.conform",
   },
   {
+    "kdheepak/lazygit.nvim",
+  },
+  {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
