@@ -1,35 +1,39 @@
 return {
+  -- rest nvim
+  {
+    "rest-nvim/rest.nvim",
+  },
   -- telescope
   {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.8",
     dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
-      require "plugins.configs.plugins.telescope"
+      require "plugins.configs.telescope"
     end,
   },
   -- nvim tree
   {
     "kyazdani42/nvim-tree.lua",
     config = function()
-      require "plugins.configs.plugins.nvim-tree"
+      require "plugins.configs.nvim-tree"
     end,
     event = { "BufWinEnter", "BufReadPre" },
   },
   -- buffer line
-  {
-    "akinsho/bufferline.nvim",
-    event = "BufReadPre",
-    config = function()
-      require "plugins.configs.plugins.bufferline"
-    end,
-  },
+  -- {
+  --   "akinsho/bufferline.nvim",
+  --   event = "BufReadPre",
+  --   config = function()
+  --     require "plugins.configs.plugins.bufferline"
+  --   end,
+  -- },
   -- lauline
   {
     "nvim-lualine/lualine.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
-      require "plugins.configs.plugins.lualine"
+      require "plugins.configs.lualine"
     end,
     event = "VeryLazy",
   },
@@ -41,26 +45,6 @@ return {
       require "configs.lspconfig"
     end,
   },
-  -- noice
-  -- {
-  --   "folke/noice.nvim",
-  --   event = "VeryLazy",
-  --   config = function()
-  --     require("plugins.configs.plugins.noice").setup()
-  --   end,
-  --   dependencies = {
-  --     "MunifTanjim/nui.nvim",
-  --   },
-  -- },
-  -- indent-blankline config
-  -- {
-  --   "lukas-reineke/indent-blankline.nvim",
-  --   config = function()
-  --     require "plugins.configs.plugins.ident-blankline"
-  --   end,
-  -- },
-  -- auto format
-  -- tree sitter
   {
     "nvim-treesitter/nvim-treesitter",
     event = "BufRead",
