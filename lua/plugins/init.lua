@@ -1,7 +1,11 @@
 return {
   -- rest nvim
   {
-    "rest-nvim/rest.nvim",
+    "Mofiqul/vscode.nvim",
+  },
+  {
+    "github/copilot.vim",
+    opts = true,
   },
   -- telescope
   {
@@ -21,13 +25,13 @@ return {
     event = { "BufWinEnter", "BufReadPre" },
   },
   -- buffer line
-  -- {
-  --   "akinsho/bufferline.nvim",
-  --   event = "BufReadPre",
-  --   config = function()
-  --     require "plugins.configs.plugins.bufferline"
-  --   end,
-  -- },
+  {
+    "akinsho/bufferline.nvim",
+    event = "BufReadPre",
+    config = function()
+      require "plugins.configs.bufferline"
+    end,
+  },
   -- lauline
   {
     "nvim-lualine/lualine.nvim",
