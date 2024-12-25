@@ -29,7 +29,5 @@ map("n", "<C-w>j", ":resize -10<CR>", { desc = "Resize window down", silent = tr
 map("n", "<leader>h", ":noh<CR>", { desc = "Clear search highlights", silent = true })
 -- rename same text mapping
 map("n", "<leader>rn", lsp.buf.rename, { desc = "LSP Rename" })
-map("i", "<C-A>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
-
-
--- map("n", "<Space>e", ":Explore .<CR>", { noremap = true, silent = true, desc = "Toggle Nvim Tree" })
+vim.g.copilot_no_tab_map = true
+vim.api.nvim_set_keymap("i", "<C-J>", 'copilot#Accept("<CR>")', { silent = true, expr = true })

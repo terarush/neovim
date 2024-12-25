@@ -1,11 +1,8 @@
 return {
-  -- rest nvim
-  {
-    "Mofiqul/vscode.nvim",
-  },
+  -- github copilot
   {
     "github/copilot.vim",
-    opts = true,
+    cmd = "Copilot"
   },
   -- telescope
   {
