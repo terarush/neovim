@@ -1,7 +1,6 @@
 require "nvchad.mappings"
 
 -- add yours mapping here
-
 local map = vim.keymap.set
 local lsp = vim.lsp
 local builtin = require "telescope.builtin"
@@ -17,9 +16,9 @@ map("n", "<leader>fb", builtin.buffers, { desc = "Telescope buffers" })
 map("n", "<leader>fh", builtin.help_tags, { desc = "Telescope help tags" })
 -- next tab mapping
 map("n", "<Tab>", ":BufferLineCycleNext<CR>", { desc = "Next tab" })
-map("n", "<C-t>", function()
-  require("nvchad.themes").open { style = "compact" }
-end, {})
+-- map("n", "<C-t>", function()
+  -- require("nvchad.themes").open { style = "compact" }
+-- end, {})
 -- risize width vsp or sp mapping
 map("n", "<C-w>h", ":vertical resize -10<CR>", { desc = "Resize window left", silent = true })
 map("n", "<C-w>l", ":vertical resize +10<CR>", { desc = "Resize window right", silent = true })
@@ -29,5 +28,15 @@ map("n", "<C-w>j", ":resize -10<CR>", { desc = "Resize window down", silent = tr
 map("n", "<leader>h", ":noh<CR>", { desc = "Clear search highlights", silent = true })
 -- rename same text mapping
 map("n", "<leader>rn", lsp.buf.rename, { desc = "LSP Rename" })
+-- rest nvim 
+map('n', '<leader>rr', '<Plug>RestNvim', { noremap = true, silent = true })
+map('n', '<leader>rp', '<Plug>RestNvimPreview', { noremap = true, silent = true })
+map('n', '<leader>rl', '<Plug>RestNvimLast', { noremap = true, silent = true })
+
+-- run rest client
+vim.api.nvim_create_user_command('RestRun', function()
+  require('rest-nvim').run()
+end, {})
+
 vim.g.copilot_no_tab_map = true
 vim.api.nvim_set_keymap("i", "<C-J>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
