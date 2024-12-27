@@ -1,6 +1,6 @@
 return {
   {
-    "ntk148v/habamax.nvim"
+    "loctvl842/monokai-pro.nvim",
   },
   -- rest nvim
   {
