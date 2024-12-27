@@ -11,4 +11,4 @@ vim.opt.tabstop = 2
 vim.opt.lazyredraw = true
 vim.opt.updatetime = 300
 
--- rest options
+-- import
