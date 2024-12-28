@@ -1,5 +1,15 @@
 return {
   {
+    "nvim-neo-tree/neo-tree.nvim",
+    cmd = "Neotree",
+    branch = "v3.x",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons",
+      "MunifTanjim/nui.nvim",
+    },
+  },
+  {
     "loctvl842/monokai-pro.nvim",
   },
   -- rest nvim
@@ -39,14 +49,6 @@ return {
     config = function()
       require "plugins.configs.telescope"
     end,
-  },
-  -- nvim tree
-  {
-    "kyazdani42/nvim-tree.lua",
-    config = function()
-      require "plugins.configs.nvim-tree"
-    end,
-    event = { "BufWinEnter", "BufReadPre" },
   },
   -- buffer line
   {

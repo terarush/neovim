@@ -1,15 +1,9 @@
 require("telescope").setup {
   defaults = {
-    prompt_prefix = "> ",
-    selection_caret = "➜ ",
     layout_strategy = "horizontal",
-    layout_config = {
-      horizontal = { width = 0.75, preview_width = 0.5 },
-      vertical = { width = 0.9, preview_height = 0.5 },
-    },
-    sorting_strategy = "descending",
-    file_ignore_patterns = { ".git/", "node_modules/", "*.o", "*.out", "*.class" },
-    color_devicons = true,
+    layout_config = { prompt_position = "top" },
+    sorting_strategy = "ascending",
+    winblend = 0,
   },
   pickers = {
     find_files = {
@@ -23,4 +17,3 @@ require("telescope").setup {
     help_tags = {},
   },
 }
-

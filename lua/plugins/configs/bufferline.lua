@@ -7,7 +7,7 @@ require("bufferline").setup {
     separator_style = "none",
     offsets = {
       {
-        filetype = "NvimTree",
+        filetype = "neo-tree",
         text = "File Explorer",
         highlight = "Directory",
         separator = true,
