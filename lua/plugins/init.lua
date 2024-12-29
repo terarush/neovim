@@ -8,33 +8,9 @@ return {
       "nvim-tree/nvim-web-devicons",
       "MunifTanjim/nui.nvim",
     },
-  },
-  {
-    "loctvl842/monokai-pro.nvim",
-  },
-  -- rest nvim
-  {
-    "rest-nvim/rest.nvim",
-    requires = { "nvim-lua/plenary.nvim" },
-    config = function()
-      require("rest-nvim").setup {
-        result_split_horizontal = false,
-        skip_ssl_verification = false,
-        highlight = {
-          enabled = true,
-          timeout = 150,
-        },
-        result = {
-          show_url = true,
-          show_http_info = true,
-          show_headers = true,
-        },
-        jump_to_request = false,
-        env_file = ".env",
-        custom_dynamic_variables = {},
-        yank_dry_run = true,
-      }
-    end,
+    config = function ()
+     require "plugins.configs.neotree"
+    end
   },
   -- github copilot
   {

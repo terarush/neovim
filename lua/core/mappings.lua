@@ -15,7 +15,7 @@ map("n", "<leader>fg", builtin.live_grep, { desc = "Telescope live grep" })
 map("n", "<leader>fb", builtin.buffers, { desc = "Telescope buffers" })
 map("n", "<leader>fh", builtin.help_tags, { desc = "Telescope help tags" })
 -- next tab mapping
-map("n", "<Tab>", ":BufferLineCycleNext<CR>", { desc = "Next tab" })
+map("n", "<Tab>", ":BufferLineCycleNext<CR>", { desc = "Next tab", silent = true })
 -- map("n", "<C-t>", function()
 -- require("nvchad.themes").open { style = "compact" }
 -- end, {})
@@ -37,9 +37,9 @@ map("n", "<leader>rl", "<Plug>RestNvimLast", { noremap = true, silent = true })
 map("n", "<leader>e", ":Neotree toggle<CR>", { silent = true })
 
 -- run rest client
-vim.api.nvim_create_user_command("RestRun", function()
-  require("rest-nvim").run()
-end, {})
+-- vim.api.nvim_create_user_command("RestRun", function()
+--   require("rest-nvim").run()
+-- end, {})
 
 vim.g.copilot_no_tab_map = true
 vim.api.nvim_set_keymap("i", "<C-J>", 'copilot#Accept("<CR>")', { silent = true, expr = true })

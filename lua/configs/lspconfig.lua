@@ -4,7 +4,7 @@ local capabilities = require("nvchad.configs.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
 local servers = {
-  "html",
+  "html-lsp",
   "cssls",
   "gopls",
   "glint",
