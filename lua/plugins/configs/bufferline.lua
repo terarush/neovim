@@ -15,4 +15,3 @@ require("bufferline").setup {
     },
   },
 }
-

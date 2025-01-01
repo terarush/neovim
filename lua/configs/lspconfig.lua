@@ -4,7 +4,6 @@ local capabilities = require("nvchad.configs.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
 local servers = {
-  "html-lsp",
   "cssls",
   "gopls",
   "glint",
@@ -13,9 +12,10 @@ local servers = {
   "lua_ls",
   "rust_analyzer",
   "clangd",
+  "vuels",
+  "volar"
   -- Uncomment these if you want to use them
   -- "stimulus-language-server",
-  -- "vue-language-server",
 }
 
 -- Setup LSP servers with default config
@@ -44,15 +44,15 @@ lspconfig.prismals.setup {
   },
 }
 
-lspconfig.emmet_ls.setup{
+lspconfig.emmet_ls.setup {
   cmd = { "emmet-ls", "--stdio" },
   filetypes = { "blade", "blade.php", "html", "css" },
   init_options = {
     html = {
       options = {
-        ["output.selfClosingStyle"] = "xhtml"
-      }
-    }
+        ["output.selfClosingStyle"] = "xhtml",
+      },
+    },
   },
 }
 
@@ -103,4 +103,3 @@ lspconfig.ts_ls.setup {
   on_init = on_init,
   capabilities = capabilities,
 }
-
