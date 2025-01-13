@@ -1,5 +1,4 @@
 require "nvchad.mappings"
-
 -- add yours mapping here
 local map = vim.keymap.set
 local lsp = vim.lsp
@@ -36,10 +35,6 @@ map("n", "<leader>rl", "<Plug>RestNvimLast", { noremap = true, silent = true })
 -- NeoTree configure
 map("n", "<leader>e", ":Neotree toggle<CR>", { silent = true })
 
--- run rest client
--- vim.api.nvim_create_user_command("RestRun", function()
---   require("rest-nvim").run()
--- end, {})
-
+-- Copilot github
 vim.g.copilot_no_tab_map = true
 vim.api.nvim_set_keymap("i", "<C-J>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
