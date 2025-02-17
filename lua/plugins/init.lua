@@ -1,5 +1,12 @@
 return {
   {
+    "IogaMaster/neocord",
+    event = "VeryLazy",
+    config = function ()
+     require "plugins.configs.neocord"
+    end
+  },
+  {
     "nvim-neo-tree/neo-tree.nvim",
     cmd = "Neotree",
     branch = "v3.x",
@@ -8,9 +15,9 @@ return {
       "nvim-tree/nvim-web-devicons",
       "MunifTanjim/nui.nvim",
     },
-    config = function ()
-     require "plugins.configs.neotree"
-    end
+    config = function()
+      require "plugins.configs.neotree"
+    end,
   },
   -- github copilot
   {

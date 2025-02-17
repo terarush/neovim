@@ -57,22 +57,22 @@ lspconfig.emmet_ls.setup {
 }
 
 -- -- Svelte Language Server
--- lspconfig.svelte.setup {
---   cmd = { "svelteserver", "--stdio" },
---   filetypes = { "svelte" },
---   settings = {
---     svelte = {
---       plugin = {
---         svelte = {
---           compilerWarnings = {
---             ["a11y-missing-attribute"] = "ignore",
---             ["a11y-unknown-aria-attribute"] = "ignore",
---           },
---         },
---       },
---     },
---   },
--- }
+lspconfig.svelte.setup {
+  cmd = { "svelteserver", "--stdio" },
+  filetypes = { "svelte" },
+  settings = {
+    svelte = {
+      plugin = {
+        svelte = {
+          compilerWarnings = {
+            ["a11y-missing-attribute"] = "ignore",
+            ["a11y-unknown-aria-attribute"] = "ignore",
+          },
+        },
+      },
+    },
+  },
+}
 
 lspconfig.svelte.setup {
   cmd = { "svelteserver", "--stdio" },
