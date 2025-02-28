@@ -36,5 +36,12 @@ map("n", "<leader>rl", "<Plug>RestNvimLast", { noremap = true, silent = true })
 map("n", "<leader>e", ":Neotree toggle<CR>", { silent = true })
 
 -- Copilot github
-vim.g.copilot_no_tab_map = true
-vim.api.nvim_set_keymap("i", "<C-J>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
+-- vim.g.copilot_no_tab_map = true
+-- vim.api.nvim_set_keymap("i", "<C-J>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
+
+-- Codium AI
+map('i', '<C-g>', 'codeium#Accept()', { expr = true, silent = true })
+map('i', '<C-;>', 'codeium#CycleCompletions(1)', { expr = true, silent = true })
+map('i', '<C-,>', 'codeium#CycleCompletions(-1)', { expr = true, silent = true })
+map('i', '<C-x>', 'codeium#Clear()', { expr = true, silent = true })
+

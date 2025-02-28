@@ -2,9 +2,9 @@ return {
   {
     "IogaMaster/neocord",
     event = "VeryLazy",
-    config = function ()
-     require "plugins.configs.neocord"
-    end
+    config = function()
+      require "plugins.configs.neocord"
+    end,
   },
   {
     "nvim-neo-tree/neo-tree.nvim",
@@ -20,9 +20,14 @@ return {
     end,
   },
   -- github copilot
+  -- {
+  --   "github/copilot.vim",
+  --   cmd = "Copilot",
+  -- },
   {
-    "github/copilot.vim",
-    cmd = "Copilot",
+    "Exafunction/codeium.vim",
+    event = "InsertEnter",
+    cmd = "Codeium"
   },
   -- telescope
   {
