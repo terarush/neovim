@@ -27,7 +27,7 @@ return {
   {
     "Exafunction/codeium.vim",
     event = "InsertEnter",
-    cmd = "Codeium"
+    cmd = "Codeium",
   },
   -- telescope
   {
@@ -101,8 +101,5 @@ return {
         "rust_analyzer",
       },
     },
-  },
-  {
-    "jwalton512/vim-blade",
   },
 }
