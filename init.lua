@@ -31,3 +31,4 @@ dofile(vim.g.base46_cache .. "statusline")
 require "core.options"
 require "nvchad.autocmds"
 require "core.mappings"
+require("barbecue.ui").update()

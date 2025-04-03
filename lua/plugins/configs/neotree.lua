@@ -1,78 +1,104 @@
 require("neo-tree").setup {
-  git_status = {
-    symbols = {
-      added = "",
-      modified = "",
-      deleted = "",
-      renamed = "",
-      untracked = "★",
-      ignored = "◌",
-      unstaged = "✗",
-      staged = "✓",
-      conflict = "",
-    },
-  },
-  window = {
-    position = "left",
-    width = 40,
-    mappings = {
-      ["<space>"] = "toggle_node",
-      ["<cr>"] = "open",
-      ["<esc>"] = "revert_preview",
-      ["P"] = { "toggle_preview", config = { use_float = true } },
-      ["l"] = "focus_preview",
-      ["S"] = "split_with_window_picker",
-      ["s"] = "vsplit_with_window_picker",
-      ["t"] = "open_tabnew",
-      ["C"] = "close_node",
-    },
-  },
-  filesystem = {
-    follow_current_file = {
-      enabled = true,
-    },
-    hijack_netrw_behavior = "open_current",
-    filtered_items = {
-      hide_gitignored = true,
-      hide_dotfiles = false,
-      hide_by_name = {
-        "node_modules",
-        "vendor",
-        "venv",
-        ".git",
-        ".DS_Store",
+  renderers = {
+    directory = {
+      { "indent" },
+      { "icon" },
+      { "current_filter" },
+      {
+        "container",
+        content = {
+          { "name", zindex = 10 },
+          { "clipboard", zindex = 10 },
+          { "diagnostics", errors_only = true, zindex = 20, align = "right" },
+        },
       },
     },
-  },
-  buffers = {
-    follow_current_file = {
-      enabled = true,
-    },
-    group_empty_dirs = true,
-    show_unloaded = true,
-  },
-  diagnostics = {
-    symbols = {
-      hint = "",
-      info = "",
-      warn = "",
-      error = "",
+    file = {
+      { "indent" },
+      { "icon" },
+      {
+        "container",
+        content = {
+          {
+            "name",
+            zindex = 10,
+          },
+          { "clipboard", zindex = 10 },
+          { "bufnr", zindex = 10 },
+          { "modified", zindex = 20, align = "right" },
+          { "diagnostics", zindex = 20, align = "right" },
+        },
+      },
     },
   },
   default_component_configs = {
     icon = {
-      folder_closed = "",
-      folder_open = "",
+      folder_closed = "",
+      folder_open = "",
       folder_empty = "",
-      default = "",
-      symlink = "",
+      default = "",
+      highlight = "NeoTreeFileIcon",
     },
     modified = {
-      symbol = "",
+      symbol = "[+]",
+      highlight = "NeoTreeModified",
     },
     name = {
       trailing_slash = false,
       use_git_status_colors = true,
+      highlight = "NeoTreeFileName",
     },
+    git_status = {
+      symbols = {
+        -- Change type
+        added     = "✚",
+        modified  = "",
+        deleted   = "✖",
+        renamed   = "",
+        -- Status type
+        untracked = "",
+        ignored   = "",
+        unstaged  = "",
+        staged    = "",
+        conflict  = "",
+      }
+    },
+  },
+  document_symbols = {
+    kinds = {
+      File = { icon = "󰈙", hl = "Tag" },
+      Namespace = { icon = "󰌗", hl = "Include" },
+      Package = { icon = "󰏗", hl = "Label" },
+      Class = { icon = "󰌗", hl = "Include" },
+      Method = { icon = "󰆧", hl = "Function" },
+      Property = { icon = "󰜢", hl = "@property" },
+      Field = { icon = "󰜢", hl = "@field" },
+      Constructor = { icon = "", hl = "@constructor" },
+      Enum = { icon = "󰕘", hl = "@number" },
+      Interface = { icon = "󰕘", hl = "Type" },
+      Function = { icon = "󰊕", hl = "Function" },
+      Variable = { icon = "󰀫", hl = "@variable" },
+      Constant = { icon = "󰏿", hl = "Constant" },
+      String = { icon = "󰀬", hl = "String" },
+      Number = { icon = "󰎠", hl = "Number" },
+      Boolean = { icon = "", hl = "Boolean" },
+      Array = { icon = "󰅪", hl = "Type" },
+      Object = { icon = "󰅩", hl = "Type" },
+      Key = { icon = "󰌋", hl = "" },
+      Null = { icon = "󰟢", hl = "Constant" },
+      EnumMember = { icon = "", hl = "Number" },
+      Struct = { icon = "󰌗", hl = "Type" },
+      Event = { icon = "", hl = "Constant" },
+      Operator = { icon = "󰆕", hl = "Operator" },
+      TypeParameter = { icon = "󰊄", hl = "Type" },
+      Component = { icon = "󰅴", hl = "Function" },
+      Fragment = { icon = "󰅴", hl = "Constant" },
+    }
+  },
+ diagnostics = {
+    enable = false,
+    show_on_dirs = false,
+    show_on_open_dirs = true,
+    debounce_delay = 50,
   },
 }

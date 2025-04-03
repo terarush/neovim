@@ -14,10 +14,9 @@ map("n", "<leader>fg", builtin.live_grep, { desc = "Telescope live grep" })
 map("n", "<leader>fb", builtin.buffers, { desc = "Telescope buffers" })
 map("n", "<leader>fh", builtin.help_tags, { desc = "Telescope help tags" })
 -- next tab mapping
-map("n", "<Tab>", ":BufferLineCycleNext<CR>", { desc = "Next tab", silent = true })
--- map("n", "<C-t>", function()
--- require("nvchad.themes").open { style = "compact" }
--- end, {})
+-- map("n", "<Tab>", ":BufferLineCycleNext<CR>", { desc = "Next tab", silent = true })
+
+map("n", "<Tab>", "", { desc = "Next tab", silent = true })
 -- risize width vsp or sp mapping
 map("n", "<C-w>h", ":vertical resize -10<CR>", { desc = "Resize window left", silent = true })
 map("n", "<C-w>l", ":vertical resize +10<CR>", { desc = "Resize window right", silent = true })
