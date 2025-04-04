@@ -1,6 +1,6 @@
 return {
   {
-    "neanias/everforest-nvim",
+    "techtuner/aura-neovim",
   },
   {
     "IogaMaster/neocord",
@@ -27,19 +27,19 @@ return {
     "github/copilot.vim",
     cmd = "Copilot",
   },
-  {
-    "utilyre/barbecue.nvim",
-    name = "barbecue",
-    version = "*",
-    dependencies = {
-      "SmiteshP/nvim-navic",
-      "nvim-tree/nvim-web-devicons",
-    },
-    opts = {},
-    config = function()
-      require "plugins.configs.barbecue"
-    end,
-  },
+  -- {
+  --   "utilyre/barbecue.nvim",
+  --   name = "barbecue",
+  --   version = "*",
+  --   dependencies = {
+  --     "SmiteshP/nvim-navic",
+  --     "nvim-tree/nvim-web-devicons",
+  --   },
+  --   opts = {},
+  --   config = function()
+  --     require "plugins.configs.barbecue"
+  --   end,
+  -- },
   -- telescope
   {
     "nvim-telescope/telescope.nvim",
@@ -50,13 +50,13 @@ return {
     end,
   },
   -- buffer line
-  -- {
-  --   "akinsho/bufferline.nvim",
-  --   event = "BufReadPre",
-  --   config = function()
-  --     require "plugins.configs.bufferline"
-  --   end,
-  -- },
+  {
+    "akinsho/bufferline.nvim",
+    event = "BufReadPre",
+    config = function()
+      require "plugins.configs.bufferline"
+    end,
+  },
   -- lauline
   {
     "nvim-lualine/lualine.nvim",
