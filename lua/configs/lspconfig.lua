@@ -13,7 +13,8 @@ local servers = {
   "rust_analyzer",
   "clangd",
   "vuels",
-  "volar"
+  "volar",
+  "terraformls"
   -- Uncomment these if you want to use them
   -- "stimulus-language-server",
 }

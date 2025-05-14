@@ -1,6 +1,12 @@
 return {
   {
-    "techtuner/aura-neovim",
+    "folke/tokyonight.nvim",
+    name = "tokyo-night",
+    lazy = false,
+    priority = 1000,
+    opts = {
+      style = "night",
+    },
   },
   {
     "IogaMaster/neocord",
@@ -151,5 +157,22 @@ return {
   --     alpha.setup(dashboard.opts)
   --   end,
   --   dependencies = { { "nvim-tree/nvim-web-devicons" } },
-  -- },
+  -- }
+  {
+    "projekt0n/github-nvim-theme",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require("github-theme").setup {
+        options = {
+          transparent = false,
+          styles = {
+            comments = "italic",
+            keywords = "bold",
+            functions = "italic,bold",
+          },
+        },
+      }
+    end,
+  },
 }

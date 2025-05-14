@@ -32,3 +32,4 @@ require "core.options"
 require "nvchad.autocmds"
 require "core.mappings"
 -- require("barbecue.ui").update()
+vim.cmd([[colorscheme tokyonight-night]])
