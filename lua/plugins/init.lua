@@ -1,5 +1,8 @@
 return {
   {
+    "shaunsingh/nord.nvim",
+  },
+  {
     "folke/tokyonight.nvim",
     name = "tokyo-night",
     lazy = false,
@@ -12,7 +15,7 @@ return {
     "IogaMaster/neocord",
     event = "VeryLazy",
     config = function()
-      require "plugins.configs.neocord"
+      require "plugins.conf.neocord"
     end,
   },
   {
@@ -25,7 +28,7 @@ return {
       "MunifTanjim/nui.nvim",
     },
     config = function()
-      require "plugins.configs.neotree"
+      require "plugins.conf.neotree"
     end,
   },
   -- github copilot
@@ -33,26 +36,13 @@ return {
     "github/copilot.vim",
     cmd = "Copilot",
   },
-  -- {
-  --   "utilyre/barbecue.nvim",
-  --   name = "barbecue",
-  --   version = "*",
-  --   dependencies = {
-  --     "SmiteshP/nvim-navic",
-  --     "nvim-tree/nvim-web-devicons",
-  --   },
-  --   opts = {},
-  --   config = function()
-  --     require "plugins.configs.barbecue"
-  --   end,
-  -- },
   -- telescope
   {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.8",
     dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
-      require "plugins.configs.telescope"
+      require "plugins.conf.telescope"
     end,
   },
   -- buffer line
@@ -60,7 +50,7 @@ return {
     "akinsho/bufferline.nvim",
     event = "BufReadPre",
     config = function()
-      require "plugins.configs.bufferline"
+      require "plugins.conf.bufferline"
     end,
   },
   -- lauline
@@ -68,7 +58,7 @@ return {
     "nvim-lualine/lualine.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
-      require "plugins.configs.lualine"
+      require "plugins.conf.lualine"
     end,
     event = "VeryLazy",
   },
@@ -119,60 +109,8 @@ return {
       },
     },
   },
-  -- dashboard nvim
-  -- {
-  --   "goolord/alpha-nvim",
-  --   event = "VimEnter",
-  --   config = function()
-  --     local alpha = require "alpha"
-  --     local dashboard = require "alpha.themes.dashboard"
-  --
-  --     dashboard.section.header.val = {
-  --       "⣿⣿⣿⡷⠊⡢⡹⣦⡑⢂⢕⢂⢕⢂⢕⢂⠕⠔⠌⠝⠛⠶⠶⢶⣦⣄⢂⢕⢂⢕",
-  --       "⣿⣿⠏⣠⣾⣦⡐⢌⢿⣷⣦⣅⡑⠕⠡⠐⢿⠿⣛⠟⠛⠛⠛⠛⠡⢷⡈⢂⢕⢂",
-  --       "⠟⣡⣾⣿⣿⣿⣿⣦⣑⠝⢿⣿⣿⣿⣿⣿⡵⢁⣤⣶⣶⣿⢿⢿⢿⡟⢻⣤⢑⢂",
-  --       "⣾⣿⣿⡿⢟⣛⣻⣿⣿⣿⣦⣬⣙⣻⣿⣿⣷⣿⣿⢟⢝⢕⢕⢕⢕⢽⣿⣿⣷⣔",
-  --       "⣿⣿⠵⠚⠉⢀⣀⣀⣈⣿⣿⣿⣿⣿⣿⣿⣿⣿⣗⢕⢕⢕⢕⢕⢕⣽⣿⣿⣿⣿",
-  --       "⢷⣂⣠⣴⣾⡿⡿⡻⡻⣿⣿⣴⣿⣿⣿⣿⣿⣿⣷⣵⣵⣵⣷⣿⣿⣿⣿⣿⣿⡿",
-  --       "⢌⠻⣿⡿⡫⡪⡪⡪⡪⣺⣿⣿⣿⣿⣿⠿⠿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃",
-  --       "⠣⡁⠹⡪⡪⡪⡪⣪⣾⣿⣿⣿⣿⠋⠐⢉⢍⢄⢌⠻⣿⣿⣿⣿⣿⣿⣿⣿⠏⠈",
-  --       "⡣⡘⢄⠙⣾⣾⣾⣿⣿⣿⣿⣿⣿⡀⢐⢕⢕⢕⢕⢕⡘⣿⣿⣿⣿⣿⣿⠏⠠⠈",
-  --       "⠌⢊⢂⢣⠹⣿⣿⣿⣿⣿⣿⣿⣿⣧⢐⢕⢕⢕⢕⢕⢅⣿⣿⣿⣿⡿⢋⢜⠠⠈",
-  --     }
-  --     dashboard.section.buttons.val = {
-  --       dashboard.button("e", "  New File", ":ene <BAR> startinsert <CR>"),
-  --       dashboard.button("f", "󰱼  Find File", ":Telescope find_files<CR>"),
-  --       dashboard.button("r", "  Recent Files", ":Telescope oldfiles<CR>"),
-  --       dashboard.button("s", "  Settings", ":e $MYVIMRC<CR>"),
-  --       dashboard.button("u", "  Update Plugins", ":Lazy update<CR>"),
-  --       dashboard.button("q", "  Quit", ":qa<CR>"),
-  --     }
-  --
-  --     local function footer()
-  --       return " github.com/rafia9005"
-  --     end
-  --
-  --     dashboard.section.footer.val = footer()
-  --
-  --     alpha.setup(dashboard.opts)
-  --   end,
-  --   dependencies = { { "nvim-tree/nvim-web-devicons" } },
-  -- }
   {
-    "projekt0n/github-nvim-theme",
-    lazy = false,
-    priority = 1000,
-    config = function()
-      require("github-theme").setup {
-        options = {
-          transparent = false,
-          styles = {
-            comments = "italic",
-            keywords = "bold",
-            functions = "italic,bold",
-          },
-        },
-      }
-    end,
+    "jwalton512/vim-blade",
+    ft = "blade",
   },
 }

@@ -33,3 +33,10 @@ require "nvchad.autocmds"
 require "core.mappings"
 -- require("barbecue.ui").update()
 vim.cmd([[colorscheme tokyonight-night]])
+
+vim.filetype.add({
+  pattern = {
+    ['.*%.blade%.php'] = 'blade',
+  },
+})
+

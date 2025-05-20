@@ -34,6 +34,15 @@ for _, lsp in ipairs(servers) do
   end
 end
 
+-- stimulus-language-server
+lspconfig.stimulus_language_server = {
+  default_config = {
+    cmd = { "stimulus-language-server", "--stdio" },
+    filetypes = { "javascript", "typescript", "html", "erb", "ruby" },
+    root_dir = lspconfig.util.root_pattern("package.json", ".git"),
+  },
+}
+
 -- Prisma Language Server
 lspconfig.prismals.setup {
   cmd = { "prisma-language-server", "--stdio" },
